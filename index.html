@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <title>Magnetic Field AR Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <!-- ── DOM Overlay (stays visible inside AR session) ── -->
+  <div id="ar-overlay">
+ 
+    <!-- Top bar -->
+    <div id="top-bar">
+      <div id="app-title">⬡ MAG·AR</div>
+      <div id="top-right">
+        <span id="fps-counter">60 FPS</span>
+        <span id="cal-badge" class="badge badge-warn">UNCAL</span>
+      </div>
+    </div>
+ 
+    <!-- Calibration progress -->
+    <div id="cal-panel">
+      <div id="cal-label">Calibrating… hold still</div>
+      <div id="cal-bar-wrap"><div id="cal-bar"></div></div>
+    </div>
+ 
+    <!-- Field strength meter -->
+    <div id="field-panel">
+      <div class="panel-title">FIELD STRENGTH</div>
+      <div id="field-value">0.0 µT</div>
+      <div id="field-bar-wrap"><div id="field-bar"></div></div>
+      <div id="field-label">–</div>
+    </div>
+ 
+    <!-- Right-side mini graph -->
+    <div id="graph-panel">
+      <div class="panel-title">HISTORY</div>
+      <canvas id="graph-canvas" width="160" height="80"></canvas>
+    </div>
+ 
+    <!-- Compass -->
+    <div id="compass-panel">
+      <canvas id="compass-canvas" width="80" height="80"></canvas>
+    </div>
+ 
+    <!-- Status bar -->
+    <div id="status-bar">
+      <span id="status-msg">Initialising…</span>
+    </div>
+ 
+    <!-- Bottom actions -->
+    <div id="bottom-bar">
+      <button id="btn-recal" class="icon-btn" title="Recalibrate">⟳</button>
+      <button id="btn-ar"    class="primary-btn">ENTER AR</button>
+      <button id="btn-export" class="icon-btn" title="Export data">↓</button>
+    </div>
+ 
+  </div><!-- /#ar-overlay -->
+ 
+  <!-- Three.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+ 
+  <!-- App entry -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+ 
